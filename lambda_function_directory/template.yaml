@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda function for testing RDS connectivity
+
+Resources:
+  RdsConnectivityFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: RdsConnectivityFunction
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Description: Lambda function for testing RDS connectivity
+      Timeout: 10
+      Environment:
+        Variables:
+          SECRET_NAME: rds!db-8523b0d9-9f6a-4efb-a68b-70f8a0d2959d
+          REGION_NAME: us-east-2
+      Policies:
+        - AWSLambdaVPCAccessExecutionRole
+        - AWSLambdaExecute
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: 'arn:aws:secretsmanager:us-east-2:200708294445:secret:rds!db-8523b0d9-9f6a-4efb-a68b-70f8a0d2959d-QKnMfB'
