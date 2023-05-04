@@ -48,6 +48,7 @@ def lambda_handler(event, context):
     db_password = secret['password']
     
     connection_string = f"host={db_host} port={db_port} user={db_user} password={db_password}"
+    print("connection_string: ", connection_string)
 
     # try: 
     #     with psycopg2.connect(connection_string) as conn: 
