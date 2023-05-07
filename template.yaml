@@ -26,5 +26,5 @@ Resources:
                 - secretsmanager:GetSecretValue
               Resource: 'arn:aws:secretsmanager:us-east-2:200708294445:secret:rds!db-8523b0d9-9f6a-4efb-a68b-70f8a0d2959d-QKnMfB'
       Layers:
-        - arn:aws:lambda:us-east-2:200708294445:layer:psycopg2:1
+        - arn:aws:lambda:us-east-2:898466741470:layer:psycopg2-py39:1
         - arn:aws:lambda:us-east-2:200708294445:layer:boto3:1
