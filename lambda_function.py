@@ -1,5 +1,5 @@
 import json
-import os
+# import os
 import psycopg2
 import boto3
 from botocore.exceptions import ClientError
